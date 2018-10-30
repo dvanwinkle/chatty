@@ -7,22 +7,15 @@ let package = Package(
     name: "chatty",
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .library(
-            name: "chatty",
-            targets: ["chatty"]),
+        .executable(name: "chatty", targets: ["chatty"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
-        .target(
-            name: "chatty",
-            dependencies: []),
-        .testTarget(
-            name: "chattyTests",
-            dependencies: ["chatty"]),
+        .target(name: "chatty", dependencies: ["PerfectHTTPServer"]),
+        .testTarget(name: "chattyTests", dependencies: ["chatty"]),
     ]
 )
