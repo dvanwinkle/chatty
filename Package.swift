@@ -5,10 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "chatty",
-    products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .executable(name: "chatty", targets: ["chatty"]),
-    ],
     dependencies: [
         .package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.0"),
     ],
