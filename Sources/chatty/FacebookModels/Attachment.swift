@@ -21,7 +21,16 @@ public struct Attachment {
         case template
     }
 
+    public struct Fallback {
+
+        public let title: String
+        public let url: URL
+        public let type: String
+
+    }
+
     public let type: AttachmentType
     public let payload: AttachmentPayload
+    public let fallback: Fallback?
 
 }
